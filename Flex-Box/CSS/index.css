@@ -1,0 +1,180 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.title{
+    font-size: 50px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.nav-container{
+    display: flex;
+    height: 60px;
+    background-color: #434343;
+
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-title{
+    color: white;
+    margin-left: 20px;
+}
+
+.nav-links{
+    margin-right: 20px;
+}
+
+.link{
+    padding: 0 20px;
+    color: white;
+    text-decoration: none;
+}
+
+.dads{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+[class*="dado"]{
+    border-radius: 10px;
+    display: flex;
+    background-color: #434343;
+    width: 120px;
+    height: 120px;
+    padding: 10px;
+    margin: 1em;
+    justify-content: space-between;
+
+}
+
+[class*="p"]{
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border-radius: 100%;
+}
+
+.dado1{
+    justify-content: center;
+    align-items: center;
+}
+
+.dado2{
+    align-items: center;
+}
+
+.p2d3{
+    align-self: center;
+}
+
+.p3d3{
+    align-self: flex-end;
+}
+
+.dado4 .columna1{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.p3d5{
+    align-self: center;
+}
+
+.dado5 .columna1{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.dado6 .columna1{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.container-flex{
+    display: flex;
+    width: 500px;
+    height: 500px;
+    background-color: lightblue;
+    margin-left: auto;
+    margin-right: auto;
+
+    /*flex-direction: valores;
+    row:valor por defecto inicia parte superior izquierda || eje horizontal main axis || eje vertical cross axis
+    row-reverse: cambia el estart y el end inicia parte superior derecha
+
+    column: cambia el main axis y el cross axis es como si le dieramos vuelta a la caja del display flex
+    || eje vartical main axis || eje horizontal cross axis
+    inicia parte superior izquierda
+    column-reverse: cambia el estart y el end inicia parte inferior izquierda
+    */
+    flex-direction: row;
+
+   /*alinea en el eje horizontal (main axis)
+   valores:
+   flex-start: izquierda (inico del eje) valor por defecto
+   flex-end: derecha (final del eje)
+   space-between: distribuye uniformemente los elementos osbre el eje horizontal (main axis)
+   space-around: deja espacio a los lados y entre los elementos (el espacio a los lados es la mitad que entre los elementos
+   es como dar un margin)
+   space-evenly: deja espacio a los lados y entre los elementos (todos los espacios son iguales)
+   center: centrado (centrado sobre los dos ejes)
+   */
+   justify-content: space-evenly;
+
+   /*alinea en el eje vertical (cross axis)*/
+   /*
+   stretch: ocupa todo el eje vertical valor por defecto si el alto no esta declarado
+   flex-start: izquierda (inico del eje)
+   flex-end: derecha (final del eje)
+   center: centrado (centrado sobre los dos ejes)
+   baseline: alinea sobre una base de linea todos los elementos
+   */
+   align-items: center;
+}
+
+/*se puede anidar el display flex como esta en el siguiente codigo*/
+
+.container-flex .flex-item{
+    width: 100px;
+    height: 100px;
+    display: flex;
+
+
+    /*alinea en el eje horizontal (main axis)*/
+    /*
+   valores:
+   flex-start: izquierda (inico del eje) valor por defecto
+   flex-end: derecha (final del eje)
+   space-between: distribuye uniformemente los elementos osbre el eje horizontal (main axis)
+   space-around: deja espacio a los lados y entre los elementos (el espacio a los lados es la mitad que entre los elementos
+   es como dar un margin)
+   space-evenly: deja espacio a los lados y entre los elementos (todos los espacios son iguales)
+   center: centrado (centrado sobre los dos ejes)
+   */
+    justify-content: center;
+
+    /*alinea en el eje vertical (cross axis)*/
+    align-items: center;
+}
+
+.container-flex .flex-item:nth-child(odd){
+    background-color: red;
+
+    /*da valores individuales de posicionamiento al item dado osea a un hijo del padre
+    flex-start: izquierda (inico del eje) valor por defecto
+    flex-end: derecha (final del eje)
+    center: centrado (centrado sobre los dos ejes)
+    baseline: alinea sobre una base de linea todos los elementos
+    */
+    align-self: flex-start;
+}
+
+.container-flex .flex-item:nth-child(even){
+    background-color: lightgreen;
+}
